@@ -10,15 +10,26 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf install -y tmux 
+dnf install -y \
+    ansible \
+    btop \
+    fira-code-fonts \
+    firefox \
+    gh \
+    lsd \
+    netcat \
+    nmap \
+    papers \
+    rclone \
+    stow \
+    strace
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+# Edge Stuff
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
+echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/edge\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | tee /etc/yum.repos.d/edge.repo
+dnf install -y edge
 
-#### Example for enabling a System Unit File
-
-systemctl enable podman.socket
+# enable stuff
+systemctl enable dconf-update.service 
+systemctl enable rpm-ostree-countme.timer
+systemctl enable podman.socket 
