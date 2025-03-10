@@ -24,7 +24,7 @@ rpm --import https://packages.microsoft.com/keys/microsoft.asc
 #    rm -fr /opt/microsoft
 #fi
 ls -lah /
-ls -lah /var/opt/
+ls -lah /var
 mkdir -p /var/opt/microsoft
 
 tee /etc/yum.repos.d/vscode.repo <<'EOF'
