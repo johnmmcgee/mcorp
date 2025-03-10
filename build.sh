@@ -79,6 +79,7 @@ dnf install -y \
 /tmp/nerd-font-installer.sh IntelOneMono
 /tmp/nerd-font-installer.sh JetBrainsMono
 /tmp/nerd-font-installer.sh Meslo
+/tmp/nerd-font-installer.sh SourceCodePro
 /tmp/nerd-font-installer.sh Terminus
 /tmp/nerd-font-installer.sh UbuntuMono
 
