@@ -40,14 +40,17 @@ dnf install -y \
     tmux \
     virt-manager
 
-# Edge
-if [[ /opt/microsoft ]]; then
-    rm -fr /opt/microsoft
-    mkdir -p /opt/microsoft
-fi
-
+# MS Repo key
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
-# VSCode because it's still better for a lot of things
+
+# Edge
+if [[ -L /opt/microsoft ]]; then
+    unlink /opt/microsoft
+elif [[ -d /opt/microsoft ]]; then
+    rm -fr /opt/microsoft
+fi
+mkdir -p /opt/microsoft
+
 tee /etc/yum.repos.d/vscode.repo <<'EOF'
 [edge]
 name=Edge Browser
