@@ -57,11 +57,9 @@ dnf install -y \
     lsd \
     make \
     netcat \
-    nerd-fonts \
     nmap \
     papers \
     pipx \
-    powerline-fonts \
     qemu-img \
     qemu-kvm \
     rclone \
@@ -75,7 +73,12 @@ dnf install -y \
 /tmp/github-release-install.sh twpayne/chezmoi x86_64
 
 # Nerd fonts
+/tmp/nerd-font-installer.sh BitstreamVeraSansMono
+/tmp/nerd-font-installer.sh CascadiaCode
+/tmp/nerd-font-installer.sh Hack
+/tmp/nerd-font-installer.sh Meslo
 /tmp/nerd-font-installer.sh Terminus
+/tmp/nerd-font-installer.sh UbuntuMono
 
 # enable stuff
 systemctl enable dconf-update.service 
