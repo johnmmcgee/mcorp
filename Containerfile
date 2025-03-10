@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/bluefin-dx:latest
+FROM ghcr.io/ublue-os/bluefin:latest
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:stable
@@ -13,9 +13,11 @@ FROM ghcr.io/ublue-os/bluefin-dx:latest
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-COPY build.sh /tmp/build.sh
+COPY build.sh github-release-install.sh /tmp/
 
 RUN mkdir -p /var/lib/alternatives && \
+    chmod +x /tmp/build.sh && \
+    chmod +x /tmp/github-release-install.sh && \
     /tmp/build.sh && \
     ostree container commit
     

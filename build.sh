@@ -2,27 +2,44 @@
 
 set -ouex pipefail
 
-### Install packages
-
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
+# fix /opt and /usr/local
+if [[ ${IMAGE} =~ bluefin|bazzite ]]; then
+    # ensure /opt and /usr/local are proper
+    if [[ ! -h /opt ]]; then
+        rm -fr /opt
+	mkdir -p /var/opt
+	ln -s /var/opt /opt
+    fi
+    if [[ ! -h /usr/local ]]; then
+        rm -fr /usr/local
+	ln -s /var/usrlocal /usr/local
+    fi
+fi
 
 # this installs a package from fedora repos
 dnf install -y \
     ansible \
     btop \
+    ccache \
     fira-code-fonts \
     firefox \
     gh \
+    git \
+    libvirt \
+    lm_sensors \
     lsd \
+    make \
     netcat \
+    nerd-fonts \
     nmap \
     papers \
+    pipx \
+    powerline-fonts \
     rclone \
     stow \
-    strace
+    strace \
+    tmux \
+    virt-manager
 
 # Edge
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -47,6 +64,9 @@ gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 dnf install -y code
+
+# Chezmoi
+/tmp/github-release-install.sh twpayne/chezmoi x86_64
 
 # enable stuff
 systemctl enable dconf-update.service 
