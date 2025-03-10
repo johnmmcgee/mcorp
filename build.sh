@@ -3,15 +3,14 @@
 set -ouex pipefail
 
 # fix /opt and /usr/local
-if [[ ! -h /opt ]]; then
-    rm -fr /opt
-    mkdir -p /var/opt
+rm -fr /opt && \
+    mkdir -p /var/opt && \
     ln -s /var/opt /opt
-fi
-if [[ ! -h /usr/local ]]; then
-    rm -fr /usr/local
-	ln -s /var/usrlocal /usr/local
-fi
+
+rm -fr /usr/local && \
+    mkdir -p /var/usrlocal && \
+    ln -s /var/usrlocal /usr/local
+
 
 # this installs a package from fedora repos
 dnf install -y \
