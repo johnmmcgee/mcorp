@@ -44,12 +44,13 @@ dnf install -y \
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
 # Edge
-if [[ -L /opt/microsoft ]]; then
-    unlink /opt/microsoft
-elif [[ -d /opt/microsoft ]]; then
-    rm -fr /opt/microsoft
-fi
-mkdir -p /opt/microsoft
+#if [[ -L /opt/microsoft ]]; then
+#    
+#elif [[ -d /opt/microsoft ]]; then
+#    rm -fr /opt/microsoft
+#fi
+unlink /opt/microsoft
+mkdir /opt/microsoft
 
 tee /etc/yum.repos.d/vscode.repo <<'EOF'
 [edge]
