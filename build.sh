@@ -49,7 +49,7 @@ rpm --import https://packages.microsoft.com/keys/microsoft.asc
 #elif [[ -d /opt/microsoft ]]; then
 #    rm -fr /opt/microsoft
 #fi
-unlink /opt/microsoft
+ls -lah /opt
 mkdir /opt/microsoft
 
 tee /etc/yum.repos.d/vscode.repo <<'EOF'
