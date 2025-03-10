@@ -13,6 +13,8 @@ if [[ ! -h /usr/local ]]; then
 	ln -s /var/usrlocal /usr/local
 fi
 
+# ublue-os copr packages
+#dnf -y copr enable ublue-os/staging
 
 # MS Repo key
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -47,7 +49,6 @@ dnf install -y \
     ccache \
     gnome-shell-extension-no-overview \
     guestfs-tools \
-    fira-code-fonts \
     firefox \
     gh \
     git \
@@ -72,6 +73,9 @@ dnf install -y \
 
 # Chezmoi
 /tmp/github-release-install.sh twpayne/chezmoi x86_64
+
+# Nerd fonts
+/tmp/nerd-font-installer.sh Terminus
 
 # enable stuff
 systemctl enable dconf-update.service 

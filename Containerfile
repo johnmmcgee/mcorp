@@ -1,10 +1,9 @@
 FROM ghcr.io/ublue-os/bluefin:stable-daily
 
-COPY build.sh github-release-install.sh /tmp/
+COPY build.sh /extras/* /tmp/
 
 RUN mkdir -p /var/lib/alternatives && \
-    chmod +x /tmp/build.sh && \
-    chmod +x /tmp/github-release-install.sh && \
+    chmod +x /tmp/*.sh && \
     /tmp/build.sh && \
     ostree container commit
     
