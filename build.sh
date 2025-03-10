@@ -45,6 +45,8 @@ dnf install -y \
     ansible \
     btop \
     ccache \
+    gnome-shell-extension-no-overview \
+    guestfs-tools \
     fira-code-fonts \
     firefox \
     gh \
@@ -59,11 +61,14 @@ dnf install -y \
     papers \
     pipx \
     powerline-fonts \
+    qemu-img \
+    qemu-kvm \
     rclone \
     stow \
     strace \
     tmux \
-    virt-manager
+    virt-manager \
+    xorriso
 
 # Chezmoi
 /tmp/github-release-install.sh twpayne/chezmoi x86_64
