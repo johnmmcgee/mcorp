@@ -49,6 +49,7 @@ rpm --import https://packages.microsoft.com/keys/microsoft.asc
 #elif [[ -d /opt/microsoft ]]; then
 #    rm -fr /opt/microsoft
 #fi
+ls -lah /
 ls -lah /opt
 mkdir /opt/microsoft
 
