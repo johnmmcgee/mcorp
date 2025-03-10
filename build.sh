@@ -3,13 +3,16 @@
 set -ouex pipefail
 
 # fix /opt and /usr/local
-rm -fr /opt && \
-    mkdir -p /var/opt && \
+if [[ ! -h /opt ]]; then
+    rm -fr /opt
+    mkdir -p /var/opt
     ln -s /var/opt /opt
+fi
+if [[ ! -h /usr/local ]]; then
+    rm -fr /usr/local
+	ln -s /var/usrlocal /usr/local
+fi
 
-rm -fr /usr/local && \
-    mkdir -p /var/usrlocal && \
-    ln -s /var/usrlocal /usr/local
 
 
 # this installs a package from fedora repos
@@ -38,6 +41,11 @@ dnf install -y \
     virt-manager
 
 # Edge
+if [[ /opt/microsoft ]]; then
+    rm -fr /opt/microsoft
+    mkdir -p /opt/microsoft
+fi
+
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
 # VSCode because it's still better for a lot of things
 tee /etc/yum.repos.d/vscode.repo <<'EOF'
