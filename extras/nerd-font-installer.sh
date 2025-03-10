@@ -32,8 +32,7 @@ if [ "$#" -gt 0 ]; then
         echo "[-] Downloading ${font_name} Nerd Font [-]"
         download_and_install_font "$font_name"
     done
-    else
-        echo "No arguments provided. Aborting."
-        exit 1
-    fi
+else
+    echo "No arguments provided. Aborting."
+    exit 1
 fi
