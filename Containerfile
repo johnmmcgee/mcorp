@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/bluefin:latest
+FROM ghcr.io/ublue-os/bluefin:stable-daily
 
 COPY build.sh github-release-install.sh /tmp/
 
