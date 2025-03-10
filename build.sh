@@ -27,7 +27,7 @@ dnf install -y \
 # Edge Stuff
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[edge-yum]\nname=edge-yum\nbaseurl=https://packages.microsoft.com/yumrepos/edge\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | tee /etc/yum.repos.d/edge.repo
-#dnf install -y microsoft-edge-stable
+dnf install -y microsoft-edge-stable
 
 
 
