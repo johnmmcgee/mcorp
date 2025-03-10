@@ -76,6 +76,8 @@ dnf install -y \
 /tmp/nerd-font-installer.sh BitstreamVeraSansMono
 /tmp/nerd-font-installer.sh CascadiaCode
 /tmp/nerd-font-installer.sh Hack
+/tmp/nerd-font-installer.sh IntelOneMono
+/tmp/nerd-font-installer.sh JetBrainsMono
 /tmp/nerd-font-installer.sh Meslo
 /tmp/nerd-font-installer.sh Terminus
 /tmp/nerd-font-installer.sh UbuntuMono
