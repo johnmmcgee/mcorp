@@ -14,6 +14,7 @@
 ORG_PROJ=${1}
 ARCH_FILTER=${2}
 LATEST=${3}
+DNF="dnf"
 
 usage() {
     echo "$0 ORG_PROJ ARCH_FILTER"
