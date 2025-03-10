@@ -14,6 +14,39 @@ if [[ ! -h /usr/local ]]; then
 fi
 
 
+# MS Repo key
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
+
+# Edge
+#if [[ -L /opt/microsoft ]]; then
+#    
+#elif [[ -d /opt/microsoft ]]; then
+#    rm -fr /opt/microsoft
+#fi
+ls -lah /
+ls -lah /var/opt/
+mkdir -p /var/opt/microsoft
+
+tee /etc/yum.repos.d/vscode.repo <<'EOF'
+[edge]
+name=Edge Browser
+baseurl=https://packages.microsoft.com/yumrepos/edge
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+EOF
+dnf install -y microsoft-edge-stable
+
+# VSCode
+tee /etc/yum.repos.d/vscode.repo <<'EOF'
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+EOF
+dnf install -y code
 
 # this installs a package from fedora repos
 dnf install -y \
@@ -39,40 +72,6 @@ dnf install -y \
     strace \
     tmux \
     virt-manager
-
-# MS Repo key
-rpm --import https://packages.microsoft.com/keys/microsoft.asc
-
-# Edge
-#if [[ -L /opt/microsoft ]]; then
-#    
-#elif [[ -d /opt/microsoft ]]; then
-#    rm -fr /opt/microsoft
-#fi
-ls -lah /
-ls -lah /opt/
-mkdir -p /var/opt/microsoft
-
-tee /etc/yum.repos.d/vscode.repo <<'EOF'
-[edge]
-name=Edge Browser
-baseurl=https://packages.microsoft.com/yumrepos/edge
-enabled=1
-gpgcheck=1
-gpgkey=https://packages.microsoft.com/keys/microsoft.asc
-EOF
-dnf install -y microsoft-edge-stable
-
-# VSCode
-tee /etc/yum.repos.d/vscode.repo <<'EOF'
-[code]
-name=Visual Studio Code
-baseurl=https://packages.microsoft.com/yumrepos/vscode
-enabled=1
-gpgcheck=1
-gpgkey=https://packages.microsoft.com/keys/microsoft.asc
-EOF
-dnf install -y code
 
 # Chezmoi
 /tmp/github-release-install.sh twpayne/chezmoi x86_64
