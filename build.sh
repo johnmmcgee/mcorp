@@ -24,12 +24,29 @@ dnf install -y \
     stow \
     strace
 
-# Edge Stuff
+# Edge
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
-echo -e "[edge-yum]\nname=edge-yum\nbaseurl=https://packages.microsoft.com/yumrepos/edge\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | tee /etc/yum.repos.d/edge.repo
+# VSCode because it's still better for a lot of things
+tee /etc/yum.repos.d/vscode.repo <<'EOF'
+[edge]
+name=Edge Browser
+baseurl=https://packages.microsoft.com/yumrepos/edge
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+EOF
 dnf install -y microsoft-edge-stable
 
-
+# VSCode
+tee /etc/yum.repos.d/vscode.repo <<'EOF'
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+EOF
+dnf install -y code
 
 # enable stuff
 systemctl enable dconf-update.service 
