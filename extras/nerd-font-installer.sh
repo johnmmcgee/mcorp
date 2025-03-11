@@ -16,7 +16,7 @@ download_and_install_font() {
 
     mkdir -p "${font_home}/${font_name}/"
     tar -xf "${font_name}.tar.xz" -C "${font_home}/${font_name}/"
-    fc-cache -fv 2>&1 > /dev/null  # Suppressing output but showing errors
+    fc-cache -fv 2>&1 > /dev/null
 
     if [ "$?" -ne 0 ]; then
         echo "Error: Extraction failed for ${font_name}. Skipping to the next font."
@@ -28,7 +28,9 @@ download_and_install_font() {
 }
 
 if [ "$#" -gt 0 ]; then
-    for font_name in "$@"; do
+    input=$(echo "$*" | tr -d ' ')
+    IFS=',' read -ra font_names <<< "$input"
+    for font_name in "${font_names[@]}"; do
         echo "[-] Downloading ${font_name} Nerd Font [-]"
         download_and_install_font "$font_name"
     done
