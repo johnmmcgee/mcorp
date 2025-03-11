@@ -30,6 +30,7 @@ gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 dnf install -y microsoft-edge-stable
+unlink /var/opt/microsoft | true
 
 # VSCode
 tee /etc/yum.repos.d/vscode.repo <<'EOF'
