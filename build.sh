@@ -78,7 +78,7 @@ dnf install -y \
     CascadiaCode,\
     Hack,\
     Inconsolata,\
-    Roboto,\
+    RobotoMono,\
     SourceCodePro
 
 # enable stuff
