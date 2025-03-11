@@ -79,6 +79,10 @@ dnf install -y \
     RobotoMono,\
     SourceCodePro
 
+# Hacky manual stuff
+rsync -rvKL /ctx/system_files/ /
+fc-cache -f /usr/share/fonts/inputmono 
+
 # enable stuff
 systemctl enable dconf-update.service 
 systemctl enable rpm-ostree-countme.timer
