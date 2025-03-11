@@ -70,12 +70,10 @@ dnf install -y \
     xorriso
 
 # Chezmoi
-/tmp/github-release-install.sh twpayne/chezmoi x86_64
+/ctx/build_files/github-release-install.sh twpayne/chezmoi x86_64
 
 # Nerd fonts
-/tmp/nerd-font-installer.sh \
-    AnonymousPro,\
-    CascadiaCode,\
+/ctx/build_files/nerd-font-installer.sh \
     Hack,\
     Inconsolata,\
     RobotoMono,\
