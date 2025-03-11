@@ -9,7 +9,7 @@ FROM ghcr.io/ublue-os/${BASE_IMAGE}:${TAG_VERSION}
 
 RUN --mount=type=bind,from=ctx,src=/,dst=/ctx \
     mkdir -p /var/lib/alternatives && \
-    chmod -R +x /tmp/build_files/*.sh && \
+    chmod +x /ctx/build_files/*.sh && \
     /ctx/build.sh && \
     ostree container commit
     
