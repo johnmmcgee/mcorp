@@ -5,7 +5,7 @@ ARG TAG_VERSION="stable-daily"
 FROM scratch AS ctx
 COPY / /
 
-FROM ghcr.io/ublue-os/$(BASE_IMAGE):$(TAG_VERSION)
+FROM ghcr.io/ublue-os/${BASE_IMAGE}:${TAG_VERSION}
 
 RUN --mounr=type=bind,from=ctx,src=/,dst=/ctx \
     mkdir -p /var/lib/alternatives && \
