@@ -33,10 +33,10 @@ EOF
 
 dnf install -y microsoft-edge-stable
 
-mv /var/opt/microsoft /usr/lib/microsoft
+mv /var/opt/microsoft /usr/share/factory/microsoft
 
 tee /usr/lib/tmpfiles.d/microsoft.conf <<'EOF'
-L  /opt/microsoft  -  -  -  -  /usr/lib/microsoft
+L  /opt/microsoft  -  -  -  -  /usr/share/factory/microsoft
 EOF
 
 # VSCode
