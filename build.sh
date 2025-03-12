@@ -61,6 +61,8 @@ dnf install -y \
     firefox \
     gh \
     git \
+    keepassxc \
+    kitty \
     libvirt \
     lm_sensors \
     lsd \
