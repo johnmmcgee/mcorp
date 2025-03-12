@@ -85,6 +85,7 @@ sh /ctx/build_files/github-release-install.sh twpayne/chezmoi x86_64
 sh /ctx/build_files/nerd-font-installer.sh \
     Hack,\
     Inconsolata,\
+    Monaspace,\
     RobotoMono,\
     SourceCodePro
 
