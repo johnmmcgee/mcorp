@@ -21,6 +21,7 @@ rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
 # Edge
 mkdir -p /var/opt/microsoft
+
 tee /etc/yum.repos.d/vscode.repo <<'EOF'
 [edge]
 name=Edge Browser
@@ -29,7 +30,14 @@ enabled=1
 gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
+
 dnf install -y microsoft-edge-stable
+
+mv /var/opt/microsoft /usr/lib/microsoft
+
+tee /usr/lib/tmpfiles.d/microsoft.conf <<'EOF'
+L  /opt/microsoft  -  -  -  -  /usr/lib/microsoft
+EOF
 
 # VSCode
 tee /etc/yum.repos.d/vscode.repo <<'EOF'
@@ -40,6 +48,7 @@ enabled=1
 gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
+
 dnf install -y code
 
 # this installs a package from fedora repos
