@@ -91,6 +91,15 @@ sh /ctx/build_files/nerd-font-installer.sh \
     RobotoMono,\
     SourceCodePro
 
+# dnf remove packages
+dnf remove -y \
+    gnome-shell-extension-dash-to-dock \
+    gnome-shell-extension-gsconnect \
+    gnome-shell-extension-tailscale-gnome-qs \
+    nautilus-gsconnect \
+    tailscale \
+    thunderbird
+
 # Hacky manual stuff
 rsync -rvKL /ctx/system_files/ /
 fc-cache -f /usr/share/fonts/inputmono 
