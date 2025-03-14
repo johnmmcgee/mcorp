@@ -82,6 +82,7 @@ dnf install -y \
 
 # Chezmoi
 sh /ctx/build_files/github-release-install.sh twpayne/chezmoi x86_64
+sh /ctx/build_files/github-release-install.sh filips123/PWAsForFirefox x86_64
 
 # Nerd fonts
 sh /ctx/build_files/nerd-font-installer.sh \
