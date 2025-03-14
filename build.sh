@@ -105,6 +105,15 @@ dnf remove -y \
 rsync -rvKL /ctx/system_files/ /
 fc-cache -f /usr/share/fonts/inputmono 
 
+
+# disable all but fedora repos
+for repo in $(dnf repolist --enabled | awk '{print $1}' | tail -n +2); do
+    if ! dnf repoinfo $repo | grep -q "fedora"; then
+        echo "Disabling repository: $repo"
+        dnf config-manager --set-disabled $repo
+    fi
+done
+
 # enable stuff
 systemctl enable dconf-update.service 
 systemctl enable rpm-ostree-countme.timer
