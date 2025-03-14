@@ -107,9 +107,7 @@ fc-cache -f /usr/share/fonts/inputmono
 
 
 # disable all but fedora repos
-for f in /etc/yum.repos.d/*.repo; do
-    sed -i "s@enabled=1@enabled=0@" $f && echo "Disabling repository: $f"
-done
+sed -i "s@enabled=1@enabled=0@g" /etc/yum.repos.d/*.repo
 
 # enable stuff
 systemctl enable dconf-update.service 
