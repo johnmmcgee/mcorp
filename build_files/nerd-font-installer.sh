@@ -24,14 +24,14 @@ download_and_install_font() {
     fi
 
     rm "${font_name}.tar.xz"
-    echo "[-] ${font_name} Nerd Font installed successfully! [-]"
+    echo "${font_name} Nerd Font installed successfully!"
 }
 
 if [ "$#" -gt 0 ]; then
     input=$(echo "$*" | tr -d ' ')
     IFS=',' read -ra font_names <<< "$input"
     for font_name in "${font_names[@]}"; do
-        echo "[-] Downloading ${font_name} Nerd Font [-]"
+        echo "Downloading ${font_name} Nerd Font"
         download_and_install_font "$font_name"
     done
 else
