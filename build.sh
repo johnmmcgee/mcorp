@@ -21,7 +21,7 @@ dnf remove -y \
     gnome-shell-extension-dash-to-dock \
     gnome-shell-extension-gsconnect \
     gnome-shell-extension-tailscale-gnome-qs \
-    mesa-va-drivers
+    mesa-va-drivers \
     nano-default-editor \
     nautilus-gsconnect \
     tailscale \
