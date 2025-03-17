@@ -14,7 +14,7 @@ if [[ ! -h /usr/local ]]; then
 fi
 
 # ublue-os copr packages
-dnf -y copr enable ublue-os/staging
+#dnf -y copr enable ublue-os/staging
 
 # dnf remove packages
 dnf remove -y \
