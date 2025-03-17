@@ -111,7 +111,7 @@ fc-cache -f /usr/share/fonts/inputmono
 # disable repos
 for f in /etc/yum.repos.d/*.repo; do
     [ "$f" != "/etc/yum.repos.d/fedora.repo" ] && \ 
-    [[ $f != *_copr* ]] && \
+    [[ $f != "*_copr*" ]] && \
     sed -i "s@enabled=1@enabled=0@" $f
 done
 
