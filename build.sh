@@ -77,6 +77,7 @@ dnf install -y \
     stow \
     strace \
     tmux \
+    vim-default-editor \
     virt-manager \
     xorriso
 
@@ -97,6 +98,7 @@ dnf remove -y \
     gnome-shell-extension-dash-to-dock \
     gnome-shell-extension-gsconnect \
     gnome-shell-extension-tailscale-gnome-qs \
+    nano-default-editor \
     nautilus-gsconnect \
     tailscale \
     thunderbird
@@ -106,8 +108,19 @@ rsync -rvKL /ctx/system_files/ /
 fc-cache -f /usr/share/fonts/inputmono 
 
 
-# disable all but fedora repos
-sed -i "s@enabled=1@enabled=0@g" /etc/yum.repos.d/*.repo
+# disable repos
+for f in /etc/yum.repos.d/*.repo; do
+    [ "$f" != "/etc/yum.repos.d/fedora.repo" ] && \ 
+    [[ $f != *_copr* ]] && \
+    sed -i "s@enabled=1@enabled=0@" $f
+done
+
+# disable coprs
+if [[ ! "${IMAGE}" =~ ucore ]]; then
+sed -i "s@enabled=1@enabled=0@g" /etc/yum.repos.d/_copr*.repo
+fi
+
+dnf clean all
 
 # enable stuff
 systemctl enable dconf-update.service 
