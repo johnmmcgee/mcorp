@@ -72,6 +72,7 @@ dnf install -y \
     firefox \
     gh \
     intel-compute-runtime \
+    intel-gpu-tools \
     keepassxc \
     kitty \
     libvirt \
