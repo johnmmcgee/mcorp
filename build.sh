@@ -70,23 +70,18 @@ dnf install -y \
     guestfs-tools \
     firefox \
     gh \
-    git \
     keepassxc \
     kitty \
     libvirt \
-    lm_sensors \
     lsd \
-    make \
     netcat \
     nmap \
     papers \
     pipx \
     qemu-img \
     qemu-kvm \
-    rclone \
     stow \
     strace \
-    tmux \
     vim-default-editor \
     virt-manager \
     xorriso
@@ -111,13 +106,12 @@ fc-cache -f /usr/share/fonts/inputmono
 # disable repos
 for f in /etc/yum.repos.d/*.repo; do
     [ "$f" != "/etc/yum.repos.d/fedora.repo" ] && \ 
-    [[ $f != "*_copr*" ]] && \
     sed -i "s@enabled=1@enabled=0@" $f
 done
 
 # disable coprs
 if [[ ! "${IMAGE}" =~ ucore ]]; then
-sed -i "s@enabled=1@enabled=0@g" /etc/yum.repos.d/_copr*.repo
+    sed -i "s@enabled=1@enabled=0@g" /etc/yum.repos.d/_copr*.repo
 fi
 
 dnf clean all
