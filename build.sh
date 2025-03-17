@@ -21,7 +21,6 @@ dnf remove -y \
     gnome-shell-extension-dash-to-dock \
     gnome-shell-extension-gsconnect \
     gnome-shell-extension-tailscale-gnome-qs \
-    mesa-va-drivers \
     nano-default-editor \
     nautilus-gsconnect \
     tailscale \
@@ -62,6 +61,7 @@ EOF
 
 dnf install -y code
 
+
 # this installs a package from fedora repos
 dnf install -y \
     ansible \
@@ -72,7 +72,6 @@ dnf install -y \
     firefox \
     gh \
     intel-compute-runtime \
-    intel-media-driver \
     keepassxc \
     kitty \
     libvirt \
@@ -91,7 +90,6 @@ dnf install -y \
 
 # Chezmoi
 sh /ctx/build_files/github-release-install.sh twpayne/chezmoi x86_64
-sh /ctx/build_files/github-release-install.sh filips123/PWAsForFirefox x86_64
 
 # Nerd fonts
 sh /ctx/build_files/nerd-font-installer.sh \
