@@ -104,15 +104,12 @@ fc-cache -f /usr/share/fonts/inputmono
 
 
 # disable repos
-for f in /etc/yum.repos.d/*.repo; do
-    [ "$f" != "/etc/yum.repos.d/fedora.repo" ] && \ 
-    sed -i "s@enabled=1@enabled=0@" $f
+repos=()
+mapfile -t repos <<<"$(find /etc/yum.repos.d/*.repo)"
+for repo in "${repos[@]}"; do
+    [ "$repo" != "/etc/yum.repos.d/fedora.repo" ] && \
+    sed -i 's@enabled=1@enabled=0@g' "$repo"
 done
-
-# disable coprs
-if [[ ! "${IMAGE}" =~ ucore ]]; then
-    sed -i "s@enabled=1@enabled=0@g" /etc/yum.repos.d/_copr*.repo
-fi
 
 dnf clean all
 
