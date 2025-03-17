@@ -14,7 +14,17 @@ if [[ ! -h /usr/local ]]; then
 fi
 
 # ublue-os copr packages
-#dnf -y copr enable ublue-os/staging
+dnf -y copr enable ublue-os/staging
+
+# dnf remove packages
+dnf remove -y \
+    gnome-shell-extension-dash-to-dock \
+    gnome-shell-extension-gsconnect \
+    gnome-shell-extension-tailscale-gnome-qs \
+    nano-default-editor \
+    nautilus-gsconnect \
+    tailscale \
+    thunderbird
 
 # MS Repo key
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -92,16 +102,6 @@ sh /ctx/build_files/nerd-font-installer.sh \
     Monaspace,\
     RobotoMono,\
     SourceCodePro
-
-# dnf remove packages
-dnf remove -y \
-    gnome-shell-extension-dash-to-dock \
-    gnome-shell-extension-gsconnect \
-    gnome-shell-extension-tailscale-gnome-qs \
-    nano-default-editor \
-    nautilus-gsconnect \
-    tailscale \
-    thunderbird
 
 # Hacky manual stuff
 rsync -rvKL /ctx/system_files/ /
