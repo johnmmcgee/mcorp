@@ -81,6 +81,7 @@ dnf install -y \
     nmap \
     papers \
     pipx \
+    podman-compose \
     qemu-img \
     qemu-kvm \
     stow \
