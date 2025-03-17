@@ -21,6 +21,7 @@ dnf remove -y \
     gnome-shell-extension-dash-to-dock \
     gnome-shell-extension-gsconnect \
     gnome-shell-extension-tailscale-gnome-qs \
+    mesa-va-drivers
     nano-default-editor \
     nautilus-gsconnect \
     tailscale \
@@ -70,6 +71,8 @@ dnf install -y \
     guestfs-tools \
     firefox \
     gh \
+    intel-compute-runtime \
+    intel-media-driver \
     keepassxc \
     kitty \
     libvirt \
