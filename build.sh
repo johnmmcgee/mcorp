@@ -88,6 +88,7 @@ dnf install -y \
     strace \
     vim-default-editor \
     virt-manager \
+    wl-clipboard \
     xorriso
 
 # Chezmoi
