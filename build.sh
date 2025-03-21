@@ -79,6 +79,7 @@ dnf install -y \
     lsd \
     netcat \
     nmap \
+    nss-tools \
     papers \
     pipx \
     podman-compose \
