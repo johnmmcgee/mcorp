@@ -85,6 +85,7 @@ dnf install -y \
     podman-compose \
     qemu-img \
     qemu-kvm \
+    qemu-user \
     stow \
     strace \
     vim-default-editor \
