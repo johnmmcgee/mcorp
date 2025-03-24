@@ -76,6 +76,9 @@ dnf install -y \
     keepassxc \
     kitty \
     libvirt \
+    libvirt-daemon-kvm \
+    libvirt-ssh-proxy \
+    libvirt-nss \
     lsd \
     netcat \
     nmap \
@@ -85,7 +88,6 @@ dnf install -y \
     podman-compose \
     qemu-img \
     qemu-kvm \
-    qemu-user \
     stow \
     strace \
     vim-default-editor \
