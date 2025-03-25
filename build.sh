@@ -65,6 +65,7 @@ dnf install -y code
 # this installs a package from fedora repos
 dnf install -y \
     ansible \
+    ansible-lint \
     btop \
     ccache \
     gnome-shell-extension-no-overview \
