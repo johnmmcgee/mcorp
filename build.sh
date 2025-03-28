@@ -85,6 +85,7 @@ dnf install -y \
     nmap \
     nss-tools \
     papers \
+    papirus-icon-theme \
     pipx \
     podman-compose \
     qemu-img \
