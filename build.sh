@@ -76,6 +76,7 @@ dnf install -y \
     intel-gpu-tools \
     keepassxc \
     kitty \
+    libreoffice-icon-theme-papirus \
     libvirt \
     libvirt-daemon-kvm \
     libvirt-ssh-proxy \
