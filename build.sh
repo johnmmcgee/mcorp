@@ -68,6 +68,8 @@ dnf install -y \
     ansible-lint \
     btop \
     ccache \
+    docker \
+    docker-buildx \
     gnome-shell-extension-no-overview \
     guestfs-tools \
     firefox \
