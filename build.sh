@@ -82,7 +82,6 @@ dnf install -y \
     libvirt-ssh-proxy \
     libvirt-nss \
     lsd \
-    moby-engine \
     netcat \
     nmap \
     nss-tools \
