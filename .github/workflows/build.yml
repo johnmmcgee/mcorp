@@ -87,7 +87,6 @@ jobs:
           sep-annotations: " "
       
       - name: Increase memory
-        id: build_image
         run: |
           set -eou pipefail
           echo "=== FREE SPACE ==="
