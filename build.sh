@@ -96,7 +96,6 @@ dnf install -y \
     strace \
     vim-default-editor \
     virt-manager \
-    wl-clipboard \
     xorriso \
     zsh-autosuggestions \
     zsh-syntax-highlighting
@@ -126,6 +125,10 @@ for repo in "${repos[@]}"; do
 done
 
 dnf clean all
+rm -rf /tmp/*
+rm -rf /var/*
+mkdir -p /tmp
+mkdir -p /var/tmp && chmod -R 1777 /var/tmp
 
 # enable stuff
 systemctl enable dconf-update.service 
