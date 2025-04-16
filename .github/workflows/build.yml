@@ -85,6 +85,27 @@ jobs:
             containers.bootc=1
           sep-tags: " "
           sep-annotations: " "
+      
+      - name: Increase memory
+        id: build_image
+        run: |
+          set -eou pipefail
+          echo "=== FREE SPACE ==="
+          df -h
+          echo "=== MEMORY AND SWAP ==="
+          free -h
+          swapon --show
+          echo "=== MAKING SWAPFILE ==="
+          SWAP_FILE="/mnt/swapfile.new"
+          sudo fallocate -l 24G "$SWAP_FILE"
+          sudo chmod 600 "$SWAP_FILE"
+          sudo mkswap "$SWAP_FILE"
+          sudo swapon "$SWAP_FILE"
+          echo "=== FREE SPACE ==="
+          df -h
+          echo "=== MEMORY AND SWAP ==="
+          free -h
+          swapon --show
 
       - name: Build Image
         id: build_image
