@@ -94,6 +94,7 @@ dnf install -y \
     qemu-kvm \
     stow \
     strace \
+    trivy \
     vim-default-editor \
     virt-manager \
     xorriso \
