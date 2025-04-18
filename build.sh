@@ -69,6 +69,7 @@ dnf install -y \
     btop \
     ccache \
     gnome-shell-extension-no-overview \
+    gnupg-pkcs11-scd \
     guestfs-tools \
     firefox \
     gh \
