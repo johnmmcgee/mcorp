@@ -99,8 +99,6 @@ dnf install -y \
     vim-default-editor \
     virt-manager \
     xorriso \
-    zsh-autosuggestions \
-    zsh-syntax-highlighting
 
 # Chezmoi
 sh /ctx/build_files/github-release-install.sh twpayne/chezmoi x86_64
