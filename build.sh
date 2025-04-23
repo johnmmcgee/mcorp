@@ -107,8 +107,8 @@ sh /ctx/build_files/github-release-install.sh twpayne/chezmoi x86_64
 
 # Nerd fonts
 sh /ctx/build_files/nerd-font-installer.sh \
-    CaskaydiaCode,\
-    CaskaydiaMono,\
+    CascadiaCode,\
+    CascadiaMono,\
     Hack,\
     Inconsolata,\
     Monaspace,\
