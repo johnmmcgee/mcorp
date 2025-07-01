@@ -99,6 +99,7 @@ dnf install -y \
     vim-default-editor \
     virt-manager \
     xorriso \
+    yq
 
 # Chezmoi
 sh /ctx/build_files/github-release-install.sh twpayne/chezmoi x86_64
@@ -108,10 +109,7 @@ sh /ctx/build_files/nerd-font-installer.sh \
     CascadiaCode,\
     CascadiaMono,\
     Hack,\
-    Inconsolata,\
-    Monaspace,\
-    RobotoMono,\
-    SourceCodePro
+    Monaspace
 
 # Hacky manual stuff
 rsync -rvKL /ctx/system_files/ /
