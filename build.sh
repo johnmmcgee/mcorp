@@ -59,7 +59,7 @@ gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 
-dnf install -y code
+dnf install -y code-1.101.2-1750797987.el8
 
 
 # this installs a package from fedora repos
