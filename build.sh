@@ -32,7 +32,7 @@ rpm --import https://packages.microsoft.com/keys/microsoft.asc
 # Edge
 mkdir -p /var/opt/microsoft
 
-tee /etc/yum.repos.d/vscode.repo <<'EOF'
+tee /etc/yum.repos.d/edge.repo <<'EOF'
 [edge]
 name=Edge Browser
 baseurl=https://packages.microsoft.com/yumrepos/edge
