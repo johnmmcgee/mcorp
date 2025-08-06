@@ -16,6 +16,10 @@ fi
 # ublue-os copr packages
 #dnf -y copr enable ublue-os/staging
 
+dnf copr -y enable dejan/lazygit
+dnf install -y lazygit
+dnf copr -y disable dejan/lazygit
+
 # dnf remove packages
 dnf remove -y \
     gnome-shell-extension-dash-to-dock \
@@ -102,7 +106,7 @@ dnf install -y \
     yq
 
 # Chezmoi
-sh /ctx/build_files/github-release-install.sh twpayne/chezmoi x86_64
+#sh /ctx/build_files/github-release-install.sh twpayne/chezmoi x86_64
 
 # Nerd fonts
 sh /ctx/build_files/nerd-font-installer.sh \
