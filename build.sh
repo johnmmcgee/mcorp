@@ -103,6 +103,7 @@ dnf install -y \
     vim-default-editor \
     virt-manager \
     xorriso \
+	uv \
     yq
 
 # Chezmoi
