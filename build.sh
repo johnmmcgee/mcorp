@@ -72,6 +72,7 @@ dnf install -y \
     ansible-lint \
     btop \
     ccache \
+	direnv \
     gnome-shell-extension-no-overview \
     gnupg-pkcs11-scd \
     guestfs-tools \
