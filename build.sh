@@ -20,6 +20,10 @@ dnf copr -y enable dejan/lazygit
 dnf install -y lazygit
 dnf copr -y disable dejan/lazygit
 
+dnf copr -y enable varland/zellij
+dnf install -y zellij
+dnf copr -y disable varland/zellij
+
 # dnf remove packages
 dnf remove -y \
     gnome-shell-extension-dash-to-dock \
@@ -119,7 +123,7 @@ sh /ctx/build_files/nerd-font-installer.sh \
 
 # Hacky manual stuff
 rsync -rvKL /ctx/system_files/ /
-fc-cache -f /usr/share/fonts/inputmono 
+fc-cache -f /usr/share/fonts/inputmono
 
 
 # disable repos
@@ -137,6 +141,6 @@ mkdir -p /tmp
 mkdir -p /var/tmp && chmod -R 1777 /var/tmp
 
 # enable stuff
-systemctl enable dconf-update.service 
+systemctl enable dconf-update.service
 systemctl enable rpm-ostree-countme.timer
-systemctl enable podman.socket 
+systemctl enable podman.socket
