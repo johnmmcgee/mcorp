@@ -20,9 +20,9 @@ dnf copr -y enable dejan/lazygit
 dnf install -y lazygit
 dnf copr -y disable dejan/lazygit
 
-dnf copr -y enable varland/zellij
+dnf copr -y enable varlad/zellij
 dnf install -y zellij
-dnf copr -y disable varland/zellij
+dnf copr -y disable varlad/zellij
 
 # dnf remove packages
 dnf remove -y \
