@@ -16,6 +16,11 @@ fi
 # ublue-os copr packages
 #dnf -y copr enable ublue-os/staging
 
+# ghostty
+dnf copr -y enable scottames/ghostty
+dnf install -y ghostty
+dnf copr -y disable scottames/gghostty
+
 dnf copr -y enable dejan/lazygit
 dnf install -y lazygit
 dnf copr -y disable dejan/lazygit
