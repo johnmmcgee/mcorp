@@ -33,7 +33,7 @@ dnf copr -y disable varlad/zellij
 
 # opencode
 curl -LO https://opencode.ai/download/stable/linux-x64-rpm -o /tmp/opencode.rpm
-dnf localinstall -y /tmp/opencode.rpm
+dnf install -y /tmp/opencode.rpm
 
 # dnf remove packages
 dnf remove -y \
