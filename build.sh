@@ -118,6 +118,7 @@ dnf install -y \
     nss-tools \
     papers \
     papirus-icon-theme \
+    pcsc-tools \
     pipx \
     podman-compose \
     qemu-img \
